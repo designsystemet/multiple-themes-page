@@ -10,7 +10,9 @@ Made a simple custom element that parses theme files and injects color variables
 - run `npm run tokens`
 - run `npm run dev`
 
+## Usage
 
+[src/theme-color](./src/theme-color.ts)
 ```html
 <button class="ds-button">will be colored farge1 from main theme (theme1)</button>   
 <ds-theme-color data-theme="theme2" data-color="farge1">
