@@ -2,7 +2,7 @@
 
 This showcases advance use of Designsystemet theme variables. This not officially supported as layers or selectors can change. Use at own risk and add safeguards.
 
-Made a simple custom element that parses theme files and injects color variables from other themes.
+Made a simple custom element that parses theme files and injects color variables from other themes into `<head>`.
 
 ```html
 <button class="ds-button">will be colored farge1 from main theme (theme1)</button>   
