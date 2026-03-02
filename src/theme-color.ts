@@ -84,6 +84,15 @@ class DsTheme extends HTMLElement {
     const css = buildThemeCSS(theme, color);
     if (!css) return;
 
+
+
+
+    //   Using CSSStyleSheet; https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet
+    //   const styleSheet = new CSSStyleSheet();
+    //   styleSheet.replaceSync(css);
+    //   document.adoptedStyleSheets = [...document.adoptedStyleSheets, styleSheet];
+
+    // Using <style> element; for browsers that don't support CSSStyleSheet
     const style = document.createElement('style');
     style.title = `ds-theme-color:${theme}:${color}`;
     style.textContent = css;
