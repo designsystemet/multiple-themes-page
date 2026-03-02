@@ -54,6 +54,17 @@ class DsTheme extends HTMLElement {
     this.ensureThemeStyles();
   }
 
+  disconnectedCallback() {
+    const theme = this.getAttribute('data-theme') ?? '';
+    const color = this.getAttribute('data-color') ?? '';
+    const key = `${theme}:${color}`;
+    if (injectedThemes.has(key)) {
+      const style = document.querySelector(`style[title="ds-theme-color:${key}"]`);
+      style?.remove();
+      injectedThemes.delete(key);
+    }
+  }
+
   attributeChangedCallback() {
     this.ensureThemeStyles();
   }
@@ -74,6 +85,7 @@ class DsTheme extends HTMLElement {
     if (!css) return;
 
     const style = document.createElement('style');
+    style.title = `ds-theme-color:${theme}:${color}`;
     style.textContent = css;
     document.head.append(style);
     injectedThemes.add(key);
