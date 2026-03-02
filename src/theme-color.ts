@@ -60,7 +60,14 @@ class DsTheme extends HTMLElement {
     const key = `${theme}:${color}`;
     if (injectedThemes.has(key)) {
       const style = document.querySelector(`style[title="ds-theme-color:${key}"]`);
-      style?.remove();
+      if (style) {
+        style?.remove();
+
+      } else if ('adoptedStyleSheets' in window.document) {
+        document.adoptedStyleSheets = document.adoptedStyleSheets.filter(
+          (sheet) => !(sheet instanceof CSSStyleSheet && sheet.title === `ds-theme-color:${key}`)
+        );
+      }
       injectedThemes.delete(key);
     }
   }
