@@ -4,12 +4,20 @@ This showcases advance use of Designsystemet theme variables. This not officiall
 
 Made a simple custom element that parses theme files and injects color variables from other themes into `<head>`.
 
+## Getting started
+- `npm i`
+- make color changes in [designsystemet.config.json](./designsystemet.config.json)
+- run `npm run tokens`
+- run `npm run dev`
+
+
 ```html
 <button class="ds-button">will be colored farge1 from main theme (theme1)</button>   
 <ds-theme-color data-theme="theme2" data-color="farge1">
     <button class="ds-button">will be colored farge1 from theme2</button>   
 </ds-theme-color>
 ```
+## Color variables
 
 ```css
 [data-theme="theme2"][data-color="farge1"][data-color-scheme="light"] {
