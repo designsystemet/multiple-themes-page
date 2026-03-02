@@ -1,0 +1,14 @@
+@import url('@digdir/designsystemet-css');
+@import url('../design-tokens-build/theme1.css');
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  font-family: var(--ds-font-family);
+}
+
+.ds-card {
+  margin-bottom: var(--ds-size-4);
+}

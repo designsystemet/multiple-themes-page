@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css" />
+  <title>multiple-themes-page</title>
+</head>
+
+<script type="module" src="src/theme-color.ts"></script>
+
+<body data-color-scheme="auto">
+  <div class="ds-card" data-variant="tinted">
+    <div class="ds-card" data-variant="tinted">
+      <p>Farge1 fra primær tema (tema 1)</p>
+      <button class="ds-button">farge1 fra tema 1</button>
+      <button class="ds-button" data-variant="secondary">farge1 fra tema 1</button>
+    </div>
+    <ds-theme-color data-theme="theme2" data-color="farge1">
+      <div class="ds-card" data-variant="tinted">
+        <p>Farge1 fra tema 2 via ds-theme-color</p>
+        <button class="ds-button">farge1 fra tema 2</button>
+        <button class="ds-button" data-variant="secondary">farge1 fra tema 2</button>
+      </div>
+    </ds-theme-color>
+    <ds-theme-color data-theme="theme3" data-color="farge1" data-color-scheme="dark">
+      <div class="ds-card" data-variant="tinted">
+        <p>Farge1 fra tema 3 via ds-theme-color</p>
+        <button class="ds-button">farge1 fra tema 3</button>
+        <button class="ds-button" data-variant="secondary">farge1 fra tema 3</button>
+      </div>
+    </ds-theme-color>
+  </div>
+
+</body>
+
+</html>
